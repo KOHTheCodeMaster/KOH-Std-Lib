@@ -31,7 +31,7 @@ public class KOHFilesUtil {
         class MyDirVisitor implements FileVisitor<Path> {
 
             private boolean result;
-            private boolean shouldBeAbsolutelyEmpty;
+            private final boolean shouldBeAbsolutelyEmpty;
             private int dirCount = -1;
 
             private MyDirVisitor(boolean shouldBeAbsolutelyEmpty) {
