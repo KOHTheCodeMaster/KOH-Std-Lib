@@ -1,4 +1,4 @@
-package dev.koh.stdlib.utils;
+package stdlib.utils;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

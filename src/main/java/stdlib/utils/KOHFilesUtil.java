@@ -1,4 +1,4 @@
-package dev.koh.stdlib.utils;
+package stdlib.utils;
 
 import java.io.*;
 import java.nio.channels.Channels;
@@ -104,5 +104,37 @@ public class KOHFilesUtil {
         return myDirVisitor.isResult();
 
     }
+
+    private boolean renameFileNameToStr(File file, String newFileName) {
+
+        boolean hasRenamed;/* = file.renameTo(new File(file.getParentFile(), currentTimeStamp + SHREDDED_EXTENSION));*/
+
+        try {
+            Files.move(file.toPath(), file.toPath().resolveSibling(newFileName));
+            hasRenamed = true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            hasRenamed = false;
+        }
+
+        return hasRenamed;
+
+    }
+
+    private boolean deleteFileNow(File file) {
+
+        boolean hasDeleted;
+
+        try {
+            hasDeleted = Files.deleteIfExists(file.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+            hasDeleted = false;
+        }
+
+        return hasDeleted;
+
+    }
+
 
 }

@@ -1,6 +1,6 @@
-package dev.koh.stdlib.utils;
+package stdlib.utils;
 
-import dev.koh.stdlib.utils.enums.StringOptions;
+import stdlib.utils.enums.StringOptions;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -114,6 +114,36 @@ public class KOHStringUtil {
         return str;
     }
 
+    /**
+     * This method creates the new directory for the given dirPath
+     * including all the non-existing sub-dirs.
+     *
+     * @param promptInputDirPath prompting user with message to input the path
+     *                           of the directory which needs to be created
+     * @param myTimer            instance of MyTimer to pause the timer
+     * @return file reference of the newly created directory for the given dirPath
+     */
+    public static File createNewDir(String promptInputDirPath, MyTimer myTimer) {
+
+        while (true) {
+
+            String dirPath = KOHStringUtil.userInputString(promptInputDirPath, StringOptions.DEFAULT, myTimer);
+
+            if (dirPath == null) return null;
+
+            //  Input is valid if str is an existing Directory
+            File file = new File(dirPath);
+            if (file.isDirectory() || file.mkdirs()) return file;
+            else {
+                System.out.println("Invalid Directory Path Found!");
+                String promptTryAgain = "Wanna try again? [Y/N] : ";
+                if (!wannaTryAgain(promptTryAgain, myTimer)) return null;
+            }
+
+        }
+
+    }
+
     private static boolean wannaTryAgain(String promptTryAgain, MyTimer myTimer) {
 
         BufferedReader bufferedReader = new BufferedReader
@@ -149,7 +179,7 @@ public class KOHStringUtil {
 
     //  Time Stamp: 14th September 2K19, 07:32 PM..!! [Night]
     public static String generateCurrentTimeStamp() {
-        String dateTimePattern = "MMMM-dd-yyyy_hh-mm-ss-SSS-a";
+        String dateTimePattern = "MMMM-dd-yyyy_hh-mm-ss-SSSS-a";
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern(dateTimePattern));
     }
 

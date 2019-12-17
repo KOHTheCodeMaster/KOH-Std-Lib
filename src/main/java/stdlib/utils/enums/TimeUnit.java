@@ -1,4 +1,4 @@
-package dev.koh.stdlib.utils.enums;
+package stdlib.utils.enums;
 
 public enum TimeUnit {
 

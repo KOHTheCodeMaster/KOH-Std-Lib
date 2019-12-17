@@ -1,6 +1,6 @@
-package dev.koh.stdlib.utils;
+package stdlib.utils;
 
-import dev.koh.stdlib.utils.enums.TimeUnit;
+import stdlib.utils.enums.TimeUnit;
 
 public class MyTimer {
     private double currentTime;

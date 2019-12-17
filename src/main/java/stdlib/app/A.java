@@ -1,6 +1,6 @@
-package dev.koh.stdlib.app;
+package stdlib.app;
 
-import dev.koh.stdlib.utils.KOHStringUtil;
+import stdlib.utils.KOHStringUtil;
 
 class A {
 
@@ -11,8 +11,8 @@ class A {
 }
 
 /*
- *  Date Created  : 7th November 2K19, 12:00 PM..!!
- *  Last Modified : 8th November 2K19, 04:09 PM..!!
+ *  Date Created  :  7th November 2K19, 12:00 PM..!!
+ *  Last Modified : 17th December 2K19, 07:26 PM..!!
  *
  *  <| ================================================================ |>
  *
@@ -26,13 +26,13 @@ class A {
  *
  *  Latest Update:
  *
- *  2nd Commit - [OSSRH Ready]
+ *  3rd Commit - [Version 0.0.2]
  *
- *  1. Updated build.gradle to Publish artifacts to Maven Central Repository via OSSRH
- *  2. MIT LICENSE added
- *  3. Updated to Java 11 version
- *
- *  Note: Unable to use Java 13 due to unresolved errors in compatibility between Gradle and Java 13
+ *  1. Updated packages from dev.koh.stdlib.* to stdlib.*
+ *  2.     Method name      Class name
+ *      a. createNewDir --> KOHStringUtil
+ *      b. renameFileNameToStr --> KOHFilesUtil
+ *      c. deleteFileNow --> KOHFilesUtil
  *
  *  <| ================================================================ |>
  *
