@@ -16,6 +16,15 @@
  *
  *  <| ================================================================ |>
  *
+ *  4th Commit - [Version 0.0.3]
+ *
+ *  1. Updated following methods to be public static :
+ *      KOHStringUtil - wannaTryAgain, doesBeginsWithWhiteSpace, doesContainsOnlyWhiteSpace
+ *      KOHFilesUtil  - deleteFileNow, renameFileNameToStr
+ *  2. Moved createNewDir method from KOHStringUtil to KOHFilesUtil
+ *
+ *  <| ================================================================ |>
+ *
  *  3rd Commit - [Version 0.0.2]
  *
  *  1. Updated packages from dev.koh.stdlib.* to stdlib.*

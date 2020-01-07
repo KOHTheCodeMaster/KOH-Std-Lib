@@ -1,5 +1,7 @@
 package stdlib.utils;
 
+import stdlib.utils.enums.StringOptions;
+
 import java.io.*;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
@@ -26,7 +28,39 @@ public class KOHFilesUtil {
 
     }
 
-    private boolean isDirEmpty(File srcDir, boolean shouldBeAbsolutelyEmpty) throws InvalidObjectException {
+    /**
+     * This method creates the new directory for the given dirPath
+     * including all the non-existing sub-dirs.
+     *
+     * @param promptInputDirPath prompting user with message to input the path
+     *                           of the directory which needs to be created
+     * @param myTimer            instance of MyTimer to pause the timer
+     * @return file reference of the newly created directory for the given dirPath
+     */
+    public static File createNewDir(String promptInputDirPath, MyTimer myTimer) {
+
+        //  Time Stamp : 7th January 2K20, 05:40 PM..!!
+        while (true) {
+
+            String dirPath = KOHStringUtil.userInputString(promptInputDirPath, StringOptions.DEFAULT, myTimer);
+
+            // TODO : Throw Proper Exception instead of null
+            if (dirPath == null) return null;
+
+            //  Input is valid if str is an existing Directory
+            File file = new File(dirPath);
+            if (file.isDirectory() || file.mkdirs()) return file;
+            else {
+                System.out.println("Invalid Directory Path Found!");
+                String promptTryAgain = "Wanna try again? [Y/N] : ";
+                if (!KOHStringUtil.wannaTryAgain(promptTryAgain, myTimer)) return null;
+            }
+
+        }
+
+    }
+
+    public static boolean isDirEmpty(File srcDir, boolean shouldBeAbsolutelyEmpty) throws InvalidObjectException {
 
         class MyDirVisitor implements FileVisitor<Path> {
 
@@ -47,23 +81,14 @@ public class KOHFilesUtil {
                         this.result = false;
                         return FileVisitResult.TERMINATE;
                     }
-                } /*else if (!shouldBeAbsolutelyEmpty) {
-
-
-                } */
-//                else this.result = true;
-
+                }
                 return FileVisitResult.CONTINUE;
             }
 
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
-
-//                if (shouldBeAbsolutelyEmpty) {
                 this.result = false;
                 return FileVisitResult.TERMINATE;
-//                }
-
             }
 
             @Override
@@ -77,7 +102,6 @@ public class KOHFilesUtil {
             public FileVisitResult postVisitDirectory(Path dir, IOException exc) {
 
                 this.result = true;
-
                 if (shouldBeAbsolutelyEmpty) return FileVisitResult.TERMINATE;
                 else return FileVisitResult.CONTINUE;
 
@@ -105,9 +129,9 @@ public class KOHFilesUtil {
 
     }
 
-    private boolean renameFileNameToStr(File file, String newFileName) {
+    public static boolean renameFileNameToStr(File file, String newFileName) {
 
-        boolean hasRenamed;/* = file.renameTo(new File(file.getParentFile(), currentTimeStamp + SHREDDED_EXTENSION));*/
+        boolean hasRenamed;
 
         try {
             Files.move(file.toPath(), file.toPath().resolveSibling(newFileName));
@@ -121,7 +145,7 @@ public class KOHFilesUtil {
 
     }
 
-    private boolean deleteFileNow(File file) {
+    public static boolean deleteFileNow(File file) {
 
         boolean hasDeleted;
 

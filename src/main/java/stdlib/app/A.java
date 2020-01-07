@@ -12,7 +12,7 @@ class A {
 
 /*
  *  Date Created  :  7th November 2K19, 12:00 PM..!!
- *  Last Modified : 17th December 2K19, 07:26 PM..!!
+ *  Last Modified :  7th January 2K20, 05:45 PM..!!
  *
  *  <| ================================================================ |>
  *
@@ -26,13 +26,12 @@ class A {
  *
  *  Latest Update:
  *
- *  3rd Commit - [Version 0.0.2]
+ *  4th Commit - [Version 0.0.3]
  *
- *  1. Updated packages from dev.koh.stdlib.* to stdlib.*
- *  2.     Method name      Class name
- *      a. createNewDir --> KOHStringUtil
- *      b. renameFileNameToStr --> KOHFilesUtil
- *      c. deleteFileNow --> KOHFilesUtil
+ *  1. Updated following methods to be public static :
+ *      KOHStringUtil - wannaTryAgain, doesBeginsWithWhiteSpace, doesContainsOnlyWhiteSpace
+ *      KOHFilesUtil  - deleteFileNow, renameFileNameToStr
+ *  2. Moved createNewDir method from KOHStringUtil to KOHFilesUtil
  *
  *  <| ================================================================ |>
  *
