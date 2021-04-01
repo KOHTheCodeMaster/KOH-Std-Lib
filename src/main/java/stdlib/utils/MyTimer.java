@@ -1,6 +1,6 @@
 package stdlib.utils;
 
-import stdlib.utils.enums.TimeUnit;
+import stdlib.enums.TimeUnit;
 
 public class MyTimer {
     private double currentTime;

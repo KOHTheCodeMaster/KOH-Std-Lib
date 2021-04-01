@@ -1,4 +1,4 @@
-package stdlib.utils.enums;
+package stdlib.enums;
 
 public enum TimeUnit {
 

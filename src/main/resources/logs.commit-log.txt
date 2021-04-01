@@ -1,18 +1,31 @@
 /*
  *  Date Created  :  7th November 2K19, 12:00 PM..!!
- *  Last Modified : 17th December 2K19, 07:26 PM..!!
+ *  Last Modified :  1st April 2K21,    07:20 PM..!!
  *
  *  <| ================================================================ |>
  *
  *  Project Title: KOH-Std-Lib
  *
- *  Description:
+ *  Latest Version: 0.0.4
  *
+ *  Description:
  *  This project is a Java-Library with Utilities to ease up the tasks.
  *
  *  <| ================================================================ |>
  *
  *  Change Log:
+ *
+ *  <| ================================================================ |>
+ *
+ *  5th Commit - [Version 0.0.4]
+ *
+ *  1. Added following new classes:
+ *      Pojos:  1. FileSizePojo         2. FilePojo         3. DirPojo      4. DirMetaDataPojo
+ *      Enums:  1. HashAlgorithm        2. StandardFileSize 3. KeysManager
+ *      Utils:  1. DirectorySizeFinder  2. HashGenerator    3. JsonHelper
+ *  2. Moved StringOptions & TimeUnit to enums package
+ *  3. Refactored from NOWHITESPACE to NO_WHITESPACE in StringOptions enum
+ *  4. Changed from JDK 11 to 8 due to compatibility issues with Android (sourceCompatibility = 1.8)
  *
  *  <| ================================================================ |>
  *

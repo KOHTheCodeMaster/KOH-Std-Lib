@@ -1,6 +1,6 @@
 package stdlib.utils;
 
-import stdlib.utils.enums.StringOptions;
+import stdlib.enums.StringOptions;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -38,7 +38,7 @@ public class KOHStringUtil {
                     invalidInput = false;
                     break;
 
-                case NOWHITESPACE:
+                case NO_WHITESPACE:
                     assert str != null;
                     if (doesContainsOnlyWhiteSpace(str)) {
                         invalidInput = true;

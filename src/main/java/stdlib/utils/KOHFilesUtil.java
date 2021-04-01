@@ -1,6 +1,6 @@
 package stdlib.utils;
 
-import stdlib.utils.enums.StringOptions;
+import stdlib.enums.StringOptions;
 
 import java.io.*;
 import java.nio.channels.Channels;
@@ -159,6 +159,5 @@ public class KOHFilesUtil {
         return hasDeleted;
 
     }
-
 
 }
